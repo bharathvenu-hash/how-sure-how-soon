@@ -1,0 +1,150 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 800" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3b4250"/></marker>
+    <marker id="r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#c0352b"/></marker>
+    <marker id="g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#9aa1ab"/></marker>
+    <style>
+      .impl { fill: #ffffff; stroke: #2f5d8a; stroke-width: 2.5; }
+      .sim { fill: #ffffff; stroke: #b86e00; stroke-width: 2.5; stroke-dasharray: 9 6; }
+      .plan { fill: #f0f0f0; stroke: #9aa1ab; stroke-width: 2; stroke-dasharray: 4 5; }
+      .group { fill: #f4f7fb; stroke: #2f5d8a; stroke-width: 2.5; }
+      .t { font-size: 17px; font-weight: 700; fill: #1f2328; }
+      .s { font-size: 13.5px; fill: #3b4250; }
+      .pt { font-size: 15px; font-weight: 700; fill: #6b7280; }
+      .ps { font-size: 13px; fill: #6b7280; }
+      .lab { font-size: 13px; fill: #3b4250; }
+      .labr { font-size: 13px; fill: #c0352b; font-weight: 700; }
+      .st { font-size: 11px; font-weight: 700; letter-spacing: .6px; }
+      .line { stroke: #3b4250; stroke-width: 2; fill: none; }
+      .red { stroke: #c0352b; stroke-width: 2.5; fill: none; }
+      .pl { stroke: #9aa1ab; stroke-width: 2; fill: none; stroke-dasharray: 5 5; }
+    </style>
+  </defs>
+
+  <text x="40" y="44" font-size="26" font-weight="700" fill="#1f2328">SureSoon system architecture</text>
+
+  <!-- Legend -->
+  <rect x="860" y="22" width="34" height="22" rx="5" class="impl"/><text x="902" y="38" class="lab">Implemented</text>
+  <rect x="1010" y="22" width="34" height="22" rx="5" class="sim"/><text x="1052" y="38" class="lab">Simulated</text>
+  <rect x="1150" y="22" width="34" height="22" rx="5" class="plan"/><text x="1192" y="38" class="lab">Planned</text>
+  <line x1="1270" y1="33" x2="1310" y2="33" class="red" marker-end="url(#r)"/><text x="1318" y="38" class="labr">Safety path</text>
+
+  <!-- User -->
+  <rect x="40" y="300" width="120" height="80" rx="40" class="impl"/>
+  <text x="100" y="337" text-anchor="middle" class="t">User</text>
+  <text x="100" y="357" text-anchor="middle" class="s">types, taps, edits</text>
+
+  <!-- Chat interface -->
+  <rect x="230" y="210" width="240" height="260" rx="14" class="impl"/>
+  <text x="250" y="240" class="t">Chat interface</text>
+  <text x="250" y="262" class="st" fill="#2f5d8a">IMPLEMENTED · index.html, app.js</text>
+  <text x="250" y="292" class="s">• Onboarding: can / can't do</text>
+  <text x="250" y="316" class="s">• 2–4 follow-up questions</text>
+  <text x="250" y="340" class="s">• Result card</text>
+  <text x="250" y="364" class="s">• What would change this?</text>
+  <text x="250" y="388" class="s">• Edit my answers</text>
+  <text x="250" y="412" class="s">• This doesn't seem right</text>
+  <text x="250" y="444" class="s">• Mode, key, display format</text>
+
+  <!-- Language layer -->
+  <rect x="560" y="120" width="270" height="110" rx="14" class="impl"/>
+  <text x="580" y="150" class="t">LLM adapter</text>
+  <text x="580" y="170" class="st" fill="#2f5d8a">IMPLEMENTED · MOCK-TESTED · llm.js</text>
+  <text x="580" y="195" class="s">Gemini / OpenAI / Claude</text>
+  <text x="580" y="215" class="s">reviewer's own key, tab memory only</text>
+
+  <rect x="560" y="280" width="215" height="100" rx="14" class="sim"/>
+  <text x="580" y="310" class="t">Demo extractor</text>
+  <text x="580" y="330" class="st" fill="#b86e00">SIMULATED AI · extract.js</text>
+  <text x="580" y="355" class="s">keyword rules, no key</text>
+
+  <rect x="560" y="430" width="270" height="70" rx="12" class="impl"/>
+  <text x="580" y="458" class="t">Output filter</text>
+  <text x="580" y="480" class="s">known facts and values only</text>
+
+  <!-- Rules engine -->
+  <rect x="900" y="90" width="280" height="470" rx="16" class="group"/>
+  <text x="920" y="122" class="t">Rules engine</text>
+  <text x="920" y="142" class="st" fill="#2f5d8a">IMPLEMENTED · rules.js · 35 TESTS</text>
+  <rect x="920" y="160" width="240" height="66" rx="10" class="impl"/>
+  <text x="935" y="185" class="t" font-size="15">1. Red-flag check</text>
+  <text x="935" y="207" class="s">facts + raw words → 999</text>
+  <rect x="920" y="240" width="240" height="66" rx="10" class="impl"/>
+  <text x="935" y="265" class="t" font-size="15">2. Base urgency</text>
+  <text x="935" y="287" class="s">per symptom profile</text>
+  <rect x="920" y="320" width="240" height="66" rx="10" class="impl"/>
+  <text x="935" y="345" class="t" font-size="15">3. Certainty score</text>
+  <text x="935" y="367" class="s">facts known × LLM confidence</text>
+  <rect x="920" y="400" width="240" height="66" rx="10" class="impl"/>
+  <text x="935" y="425" class="t" font-size="15">4. Cautious rule</text>
+  <text x="935" y="447" class="s">low certainty raises, never lowers</text>
+  <rect x="920" y="480" width="240" height="66" rx="10" class="impl"/>
+  <text x="935" y="505" class="t" font-size="15">5. What would change</text>
+  <text x="935" y="527" class="s">try other answers</text>
+
+  <!-- Presentation -->
+  <rect x="1240" y="200" width="170" height="230" rx="14" class="impl"/>
+  <text x="1256" y="230" class="t">Display formats</text>
+  <text x="1256" y="250" class="st" fill="#2f5d8a">IMPLEMENTED</text>
+  <text x="1256" y="280" class="s">Decoupled (default)</text>
+  <text x="1256" y="304" class="s">Unified (version 1)</text>
+  <text x="1256" y="328" class="s">Urgency only</text>
+  <text x="1256" y="352" class="s">Certainty only</text>
+  <text x="1256" y="384" class="s" font-style="italic">research mode switch</text>
+
+  <!-- Care message -->
+  <rect x="1240" y="450" width="170" height="124" rx="14" class="impl"/>
+  <text x="1256" y="478" class="t">Care message</text>
+  <text x="1256" y="497" class="st" fill="#2f5d8a">IMPLEMENTED · care.js</text>
+  <text x="1256" y="520" class="s">reassurance by urgency</text>
+  <text x="1256" y="540" class="s">NHS tips, safety-net</text>
+  <text x="1256" y="560" class="s">LLM wording checked</text>
+  <path d="M1180,505 L1238,505" class="line" marker-end="url(#a)"/>
+
+  <!-- Flows -->
+  <line x1="160" y1="330" x2="228" y2="330" class="line" marker-end="url(#a)"/>
+  <text x="166" y="318" class="lab">message</text>
+  <line x1="228" y1="356" x2="160" y2="356" class="line" marker-end="url(#a)"/>
+  <text x="168" y="378" class="lab">result</text>
+
+  <path d="M470,260 L520,260 L520,175 L558,175" class="line" marker-end="url(#a)"/>
+  <text x="478" y="214" class="lab">text +</text><text x="478" y="230" class="lab">context</text>
+  <path d="M470,320 L558,320" class="line" marker-end="url(#a)"/>
+  <text x="482" y="312" class="lab">text (demo)</text>
+
+  <path d="M805,230 L805,428" class="line" marker-end="url(#a)"/>
+  <text x="812" y="300" class="lab">JSON</text>
+  <path d="M667,380 L667,428" class="line" marker-end="url(#a)"/>
+  <path d="M830,465 L868,465 L868,350 L898,350" class="line" marker-end="url(#a)"/>
+  <text x="812" y="372" class="lab">facts +</text>
+  <text x="812" y="388" class="lab">confid.</text>
+
+  <path d="M470,190 L500,190 L500,80 L870,80 L870,193 L918,193" class="red" marker-end="url(#r)"/>
+  <text x="520" y="72" class="labr">raw words bypass the AI</text>
+
+  <path d="M1180,320 L1238,320" class="line" marker-end="url(#a)"/>
+  <text x="1186" y="310" class="lab">result</text>
+
+  <path d="M1325,574 L1325,600 L350,600 L350,472" class="line" marker-end="url(#a)"/>
+  <path d="M1325,430 L1325,448" class="line" marker-end="url(#a)"/>
+  <text x="700" y="592" class="lab">result card + care message: how soon, how sure, why, what helps</text>
+
+  <path d="M410,470 L410,575 L1040,575 L1040,562" class="line" marker-end="url(#a)"/>
+  <text x="560" y="568" class="lab">corrected answers → recalculate</text>
+
+  <!-- Planned -->
+  <text x="40" y="660" class="pt">PLANNED</text>
+  <rect x="40" y="676" width="300" height="92" rx="12" class="plan"/>
+  <text x="56" y="704" class="pt">Plug-in for existing assistants</text>
+  <text x="56" y="726" class="ps">browser extension or MCP server</text>
+  <text x="56" y="746" class="ps">runs the same rules inside any chat</text>
+  <rect x="370" y="676" width="300" height="92" rx="12" class="plan"/>
+  <text x="386" y="704" class="pt">Calmer tone for health anxiety</text>
+  <text x="386" y="726" class="ps">adapts wording, not urgency</text>
+  <rect x="700" y="676" width="330" height="92" rx="12" class="plan"/>
+  <text x="716" y="704" class="pt">Vignette study, 4 formats</text>
+  <text x="716" y="726" class="ps">logs choices, perceived risk, distress</text>
+  <rect x="1060" y="676" width="350" height="92" rx="12" class="plan"/>
+  <text x="1076" y="704" class="pt">Clinician-reviewed rules</text>
+  <text x="1076" y="726" class="ps">urgency labels set with experts</text>
+</svg>
