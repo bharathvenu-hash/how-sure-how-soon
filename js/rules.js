@@ -146,7 +146,7 @@
     { re: /face (is )?(drooping|droop)|slurred speech|can'?t lift (my|both) arms?/i, why: "Signs of a possible stroke need emergency help." },
     { re: /unconscious|passed out|won'?t wake|unresponsive/i, why: "Loss of consciousness needs emergency help." },
     { re: /seizure|fitting|having a fit/i, why: "A seizure needs emergency help." },
-    { re: /severe bleeding|bleeding (heavily|a lot)|won'?t stop bleeding/i, why: "Heavy bleeding needs emergency help." },
+    { re: /(severe|heavy) bleeding|bleeding (heavily|a lot|badly)|(won'?t|will not|doesn'?t|does not|can'?t) stop bleeding|bleeding (that |which )?(won'?t|will not|doesn'?t|does not) stop/i, why: "Heavy bleeding needs emergency help." },
     { re: /worst headache/i, why: "A sudden, very severe headache can be serious." },
     { re: /chest[^.]*\b(tight|squeez|pressure|heav|crush)|\b(tight|squeez|pressure|heav|crush)\w*[^.]*chest/i,
       why: "Chest pain or discomfort that feels tight, heavy or squeezing needs emergency help (NHS)." },
@@ -281,6 +281,7 @@
     if (base.certainty.unknown.length && !base.redFlag) {
       out.push({ kind: "certainty", text: "Telling me " + listWords(base.certainty.unknown) + " would make me more sure." });
     }
+        if (base.urgency < 3) out.push({ kind: "safety", text: "If you feel much worse or struggle to breathe at any point: call 999." });
        if (base.urgency === 3) {
       out.push({ kind: "safety", text: "This is already the most urgent advice, so no answer can raise it further." });
       out.push({ kind: "safety", text: "No answer can lower it either: these signs always mean calling 999 now, even if you start to feel better." });
