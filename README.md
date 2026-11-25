@@ -93,7 +93,7 @@ Each version was tested before the next change. Details are in [`docs/dev-notes.
 
 ## AI assistance
 
-I used Claude (Anthropic) for planning, background research and support while building the prototype. I made the design decisions and checked the results myself.
+I have used Claude (Anthropic) for planning, background research and support while building the prototype. I made the design decisions and checked the results myself.
 
 ## Additional files
 
