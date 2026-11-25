@@ -108,7 +108,7 @@
   <text x="168" y="378" class="lab">result</text>
 
   <path d="M470,260 L520,260 L520,175 L558,175" class="line" marker-end="url(#a)"/>
-  <text x="478" y="214" class="lab">text +</text><text x="478" y="230" class="lab">context</text>
+  <text x="478" y="282" class="lab">text + context</text>
   <path d="M470,320 L558,320" class="line" marker-end="url(#a)"/>
   <text x="482" y="312" class="lab">text (demo)</text>
 
@@ -119,8 +119,8 @@
   <text x="812" y="372" class="lab">facts +</text>
   <text x="812" y="388" class="lab">confid.</text>
 
-  <path d="M470,190 L500,190 L500,80 L870,80 L870,193 L918,193" class="red" marker-end="url(#r)"/>
-  <text x="520" y="72" class="labr">raw words bypass the AI</text>
+  <path d="M470,220 L540,220 L540,80 L870,80 L870,193 L918,193" class="red" marker-end="url(#r)"/>
+  <text x="555" y="72" class="labr">raw words bypass the AI</text>
 
   <path d="M1180,320 L1238,320" class="line" marker-end="url(#a)"/>
   <text x="1186" y="310" class="lab">result</text>
