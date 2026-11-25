@@ -250,7 +250,7 @@
     autosize();
     if (state.result) {
       if (smallTalk(text)) return say(friendlyReply(text).replace(ASK, "").replace(ASK_AGAIN, "") + " If you'd like to check another symptom, press <b>New chat</b> (the + at the top).");
-      return say("If you'd like to check something else, press <b>New chat</b> (the + at the top).");
+      return say("If you'd like to check something else, press <b>New chat</b> (the + next to the message box).");
     }
     setBusy(true);
 
