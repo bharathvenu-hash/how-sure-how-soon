@@ -281,7 +281,10 @@
     if (base.certainty.unknown.length && !base.redFlag) {
       out.push({ kind: "certainty", text: "Telling me " + listWords(base.certainty.unknown) + " would make me more sure." });
     }
-    if (base.urgency < 3) out.push({ kind: "safety", text: "If you feel much worse or struggle to breathe at any point: call 999." });
+       if (base.urgency === 3) {
+      out.push({ kind: "safety", text: "This is already the most urgent advice, so no answer can raise it further." });
+      out.push({ kind: "safety", text: "No answer can lower it either: these signs always mean calling 999 now, even if you start to feel better." });
+    }
     return out;
   }
 
