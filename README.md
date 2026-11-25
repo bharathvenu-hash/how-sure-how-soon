@@ -1,6 +1,6 @@
 # How Sure, How Soon: Communicating Uncertainty and Urgency in AI Health Self-Triage
 
-Project report by Bharath Badri Venugopalan, Student ID 3204674
+Project report by Bharath Badri Venugopalan, Student ID: 3204674
 
 **SureSoon** is the prototype for my project *How Sure, How Soon*: a research prototype for AI health self-triage. It shows **how soon** to get care (urgency) and **how sure** the system is (certainty) as two separate signals. A language model, or a simulated stand-in, reads what the person says; fixed rules decide urgency.
 ## Project status
@@ -33,6 +33,7 @@ Limits: the rules cover four symptoms (sore throat, chest discomfort, headache, 
 - **`js/care.js`**: the care message (reassurance, NHS self-care tips, safety-netting) and the safety check for LLM-written reassurance.
 - **`js/llm.js`**: the LLM adapter. Default models: `gemini-3.8-flash`, `gpt-4o-mini`, `claude-haiku-5-5`; any model name can be typed in. The model returns JSON facts, a confidence score and a one-sentence reply. It never sets urgency.
 - **Node.js** for the rule tests; **Python with Playwright** for the replay, storyboard and mocked live-mode scripts.
+- **AI Tool**: Claude (Anthropic).
 
 ## Running or inspecting the work
 
@@ -92,8 +93,7 @@ Each version was tested before the next change. Details are in [`docs/dev-notes.
 
 ## AI assistance
 
-- **Tool:** Claude (Anthropic)
-
+I used Claude (Anthropic) for planning, background research and support while building the prototype. I made the design decisions and checked the results myself.
 
 ## Additional files
 
